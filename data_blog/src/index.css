@@ -12,3 +12,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.color-pink{
+  color: #FB007F;
+}
+
+.color-pink-background{
+  background-color: #FB007F;
+}
+
+.color-green{
+  color: #C3D400;
+}
+
+.color-green-background{
+  background-color: #C3D400;
+}
+
+.color-grey{
+  color: #706E6F;
+}
+
+.color-grey-background{
+  background-color:#706R6F;
+}
+
