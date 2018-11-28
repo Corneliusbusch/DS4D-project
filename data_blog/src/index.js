@@ -2,9 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Main from './Components/Main';
+import Counter from './Components/Counter';
+import Gendericon from './Components/Gendericon';
+import FWgraphtemp from './Components/FWgraphtemp';
+import Locationicon from './Components/Locationicon';
+import Conditions from './Components/Conditions';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(
+    <div>
+        <Main />
+        <Counter />
+        <Gendericon />
+        <FWgraphtemp />
+        <Locationicon />
+        <Conditions />
+
+    </div>, 
+    document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
