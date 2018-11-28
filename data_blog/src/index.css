@@ -63,7 +63,7 @@ code {
   background-color: #474546;
 }
 
-h1 {
+h1, .bigtext {
   font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
   font-size: 4em;
   font-weight: 100;
