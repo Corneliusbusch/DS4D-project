@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import './NetworkGraph.css';
 
 class NetworkGraphv2 extends Component {
-    scale;
+
 
     drawChart() {
         const graph = this.props.graph;
@@ -35,7 +35,7 @@ class NetworkGraphv2 extends Component {
             .selectAll("line")
             .data(links)
             .enter().append("line")
-            .attr("stroke-width", d => this.getOpacityFromTimeDiff(d.time));
+            .attr("stroke-width", 0.5);
 
         const node = svg.append("g")
             .attr("stroke", "#fff")

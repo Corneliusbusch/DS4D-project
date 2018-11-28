@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import NetworkGraph from "./NetworkGraph";
+import NetworkGraph from "./NetworkGraph";
 //import NetworkGraphd3 from "./NetworkGraphd3";
 import NetworkGraphv2 from "./NetworkGraphv2";
 const axios = require('axios');
@@ -9,8 +9,8 @@ class GraphDiv extends Component {
 
     state = {
         graph: {},
-        width: 700,
-        height: 700,
+        width: 1024,
+        height: 1000,
         id: 'root'
     }
 
@@ -34,7 +34,7 @@ class GraphDiv extends Component {
                 { this.state && (Object.keys(this.state.graph).length > 0) &&
                 <div>
                     <div>This renders only after the data arrived</div>
-                    <NetworkGraphv2 graph={this.state.graph} width={this.state.width} height={this.state.height} />
+                    <NetworkGraph graph={this.state.graph} width={this.state.width} height={this.state.height} />
                 </div>
                 }
             </div>
