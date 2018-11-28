@@ -1,0 +1,24 @@
+.Conditions {
+  text-align: center;
+  border-bottom: 1px solid #E9E1E5;
+}
+
+.Conditions-header {
+  padding: 70px 0;
+  display: inline-block;
+  flex-direction: inherit;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+img.graph {
+  width: 100%;
+}
+
+iframe.chart-conditions .chart .label span {
+  text-shadow: 0 0 2px #fff;
+  font-size: 12px;
+  font-family: 'Roboto';
+  color: #706E6F;
+}
