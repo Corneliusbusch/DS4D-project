@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Century Gothic", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,31 +19,108 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: "Century Gothic", "Roboto", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.color-pink{
+.color-white {
+  color: #FFF;
+}
+
+.color-white-background {
+  color: #FFF;
+}
+
+.color-pink {
   color: #FB007F;
 }
 
-.color-pink-background{
+.color-pink-background {
   background-color: #FB007F;
 }
 
-.color-green{
+.color-green {
   color: #C3D400;
 }
 
-.color-green-background{
+.color-green-background {
   background-color: #C3D400;
 }
 
-.color-grey{
+.color-grey {
   color: #706E6F;
 }
 
-.color-grey-background{
-  background-color:#706R6F;
+.color-grey-background {
+  background-color: #706E6F;
 }
 
+.color-drk-grey {
+  color: #474546;
+}
+
+.color-drk-grey-background {
+  background-color: #474546;
+}
+
+h1 {
+  font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 4em;
+  font-weight: 100;
+  margin: 10px 0 10px 0;
+}
+
+h2 {
+  font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-style: italic;
+  margin: 10px 0 10px 0;
+}
+
+p {
+  font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 0.8em;
+  font-weight: 100;
+  margin: 10px 0 10px 0;
+}
+
+.row {
+  display: table;
+  width: 1024px; /*Optional*/
+}
+
+.col {
+  display: table-cell;
+  padding: 0 40px;
+}
+
+.col-4 {
+  width: 1024px;
+}
+.col-3 {
+  width: 768px;
+}
+.col-2 {
+  width:512px;
+}
+.col-1 {
+  width: 256px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .row {
+    display: block;
+    table-layout: auto; /*Optional*/
+    margin:0;
+    width: auto;
+  }
+  .col {
+    display: block;
+    width: auto;
+  }
+  .col-4, .col-3, .col-2, .col-1 {
+    width: auto;
+  }
+}
