@@ -15,10 +15,3 @@
 img.graph {
   width: 100%;
 }
-
-iframe.chart-conditions .chart .label span {
-  text-shadow: 0 0 2px #fff;
-  font-size: 12px;
-  font-family: 'Roboto';
-  color: #706E6F;
-}
