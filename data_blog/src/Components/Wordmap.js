@@ -8,7 +8,7 @@ class Wordmap extends Component {
         <header className="Wordmap-header row color-grey">
           <div className="col col-4">
             <h2>Wordmap of Keywords</h2>
-            <iframe src="WordCloud.html" scrolling="no" frameborder="0" width="800" height="500"></iframe>
+            <iframe src="WordCloud.html" frameborder="0" width="800" height="500"></iframe>
           </div>
         </header>
       </div>
