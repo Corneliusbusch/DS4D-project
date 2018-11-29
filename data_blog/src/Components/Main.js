@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Main.css';
-import GraphDiv from "./GraphDiv";
 import whitelogo from './images/cleverclogs-logo-white.png';
 
 class Main extends Component {
