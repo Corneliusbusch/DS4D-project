@@ -63,11 +63,23 @@ code {
   background-color: #474546;
 }
 
+.color-light-grey {
+  color: #DFDFDF;
+}
+
+.color-light-grey-background {
+  background-color: #DFDFDF;
+}
+
 h1, .bigtext {
   font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
   font-size: 4em;
   font-weight: 100;
   margin: 10px 0 10px 0;
+}
+
+h1.smaller {
+  font-size: 2.5em;
 }
 
 h2 {
@@ -84,6 +96,10 @@ p {
   font-size: 0.8em;
   font-weight: 100;
   margin: 10px 0 10px 0;
+}
+
+.icon img {
+  height: 300px;
 }
 
 .row {
