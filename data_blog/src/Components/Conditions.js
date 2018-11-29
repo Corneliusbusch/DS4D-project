@@ -9,7 +9,7 @@ class Conditions extends Component {
         <header className="Conditions-header row color-grey">
           <div className="col col-4">
             <h2>User Conditions</h2>
-            <iframe className="chart-conditions" src="//datawrapper.dwcdn.net/bDo71/1/" scrolling="no" frameborder="0" width="980" height="500"></iframe>
+            <iframe src="//datawrapper.dwcdn.net/bDo71/1/" scrolling="no" frameborder="0" width="980" height="500"></iframe>
           </div>
         </header>
       </div>
