@@ -1,7 +1,6 @@
 .Locationicon {
   text-align: center;
   background: linear-gradient(90deg, #FFF 50%, #C3D400 50%);
-  padding: 60px 0;
   border-bottom: 1px solid #E9E1E5;
 }
 
@@ -15,10 +14,6 @@
 
 .text {
   text-align: left;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.icon img {
-  height: 300px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }

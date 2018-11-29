@@ -1,10 +1,10 @@
-.Conditionicon {
+.Whaticon {
   text-align: center;
-  background: linear-gradient(90deg, #FB007F 50%, #FFF 50%);
+  background: linear-gradient(90deg, #FFF 50%, #C3D400 50%);
   border-bottom: 1px solid #E9E1E5;
 }
 
-.Conditionicon-header {
+.Whaticon-header {
   display: inline-flex;
   flex-direction: inherit;
   align-items: center;

@@ -9,7 +9,7 @@ class Counter extends Component {
       <div className="Counter color-white-background">
         <header className="Counter-header row color-grey">
           <div className="col col-1 color-pink" id="counter">
-              <CountUp className="bigtext" end={9} />
+              <CountUp className="bigtext" end={10} />
             <p>months</p>
           </div>
           <div className="col col-1 color-grey">
