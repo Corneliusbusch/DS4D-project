@@ -12,6 +12,7 @@ import Locationicon from './Components/Locationicon';
 import Conditionicon from './Components/Conditionicon';
 import Conditions from './Components/Conditions';
 import Whaticon from './Components/Whaticon';
+import Football from './Components/Football';
 import Wordmap from './Components/Wordmap';
 import Network from './Components/Network';
 import Whenicon from './Components/Whenicon';
@@ -31,6 +32,7 @@ ReactDOM.render(
         <Conditions />
         <Whaticon />
         <Wordmap />
+        <Football />
         <Network />
         <Whenicon />
 
