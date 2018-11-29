@@ -13,6 +13,7 @@ import Conditionicon from './Components/Conditionicon';
 import Conditions from './Components/Conditions';
 import Whaticon from './Components/Whaticon';
 import Wordmap from './Components/Wordmap';
+import Network from './Components/Network';
 import Whenicon from './Components/Whenicon';
 import * as serviceWorker from './serviceWorker';
 
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Conditions />
         <Whaticon />
         <Wordmap />
+        <Network />
         <Whenicon />
 
     </div>, 
