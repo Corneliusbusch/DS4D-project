@@ -1,0 +1,22 @@
+.LocationGraphs2 {
+  text-align: center;
+  border-bottom: 1px solid #E9E1E5;
+}
+
+.LocationGraphs2-header {
+  padding: 70px 0;
+  display: inline-block;
+  flex-direction: inherit;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+img.graph {
+  width: 100%;
+}
+
+.locbutton {
+  margin-left: 2%;
+  margin-right: 2%;
+}

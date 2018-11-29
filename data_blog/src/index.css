@@ -86,6 +86,12 @@ p {
   margin: 10px 0 10px 0;
 }
 
+button {
+  font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
+  color: #706E6F;
+  cursor: pointer;
+}
+
 .row {
   display: table;
   width: 1024px; /*Optional*/

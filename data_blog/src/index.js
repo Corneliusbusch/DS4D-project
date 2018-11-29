@@ -6,6 +6,8 @@ import Counter from './Components/Counter';
 import Gendericon from './Components/Gendericon';
 import FWgraphtemp from './Components/FWgraphtemp';
 import Locationicon from './Components/Locationicon';
+import LocationGraphs from './Components/LocationGraphs';
+import LocationGraphs2 from './Components/LocationGraphs2';
 import Conditions from './Components/Conditions';
 import * as serviceWorker from './serviceWorker';
 
@@ -16,6 +18,8 @@ ReactDOM.render(
         <Gendericon />
         <FWgraphtemp />
         <Locationicon />
+        <LocationGraphs />
+        <LocationGraphs2 />
         <Conditions />
 
     </div>, 
