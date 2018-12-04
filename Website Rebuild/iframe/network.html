@@ -3,7 +3,7 @@
 <style>
 
     .links line {
-        stroke: #999;
+        stroke: #706E6f;
         stroke-opacity: 0.6;
     }
 
@@ -31,13 +31,19 @@
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
+    var toggle = 0;
+    var previousFocused = null;
+
     var color = d3.scaleOrdinal().domain(["Category", "Internet"])
         .range(["#c3d400", "#Fb007F"]);;
 
 
     var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function(d) { return d.id; }))
-        .force("charge", d3.forceManyBody().strength(-1000))
+        .force("link",
+            d3.forceLink().id(function(d) { return d.id; }))
+        //.distance(function(d) { return Math.sqrt(d.value) /4 }))
+        .force("charge", d3.forceManyBody().strength(-900))
+        //.force("collide", d3.forceCollide().radius(function(d) { return d.r + 0.5; }).iterations(2))
         .force("center", d3.forceCenter(width / 2, (height / 2)+50));
 
     function getOpacity(value){
@@ -60,43 +66,120 @@
             .enter().append("line")
             .attr("stroke-width", function(d){
                 return 10*getOpacity(d.value)
-            })//function(d) { return Math.sqrt(d.value); })
+            })
             .style("stroke-opacity", function(d){
-            return getOpacity(d.value)
-        });
+                return getOpacity(d.value)
+            })
+            .on('mouseover', function(d){
+                tooltip
+                    .attr('transform', 'translate(' + d3.mouse(this)[0] + ',' + d3.mouse(this)[1] + ')')
+                    .style('visibility', 'visible');
+                rect.attr('width', 25 * 12);
+                toolTipLabel.text(("Link Strength: " + d.value));
+                if(toggle === 0 ) {
+                    d3.select(this).style("stroke", "#333").style('opacity', 1);
+                }
+            })
+            .on('mouseout', function(d) {
+                tooltip
+                    .style('visibility', 'hidden');
+                if(toggle === 0){
+                    d3.select(this).style("stroke", "#706e6f").style('opacity', (10*getOpacity(d.value)));
+
+                }
+            });
 
         var node = svg.append("g")
             .attr("class", "nodes")
             .selectAll("g")
             .data(graph.nodes)
-            .enter().append("g")
+            .enter().append("g");
 
-        function rscale(d){
-            return d3.scaleLinear()
-                .domain([0, d3.max(d.traffic) ])
-                .range([2, 50]);
-        }
-        /*var rscale = d3.scaleLinear()
-            .domain([0, d3.max(d.traffic) ])
-            .range([2, 50]);*/
 
+        var maxTraffic = 0;
+        graph.nodes.forEach((d) => {
+            if (d.traffic > maxTraffic) {
+                maxTraffic = d.traffic;
+                console.log(maxTraffic)
+            }
+        });
+
+        var rscale  =  d3.scaleSqrt()
+            .domain([50, maxTraffic])
+            .range([10, 70]);
+
+
+// AAAh TODO Keep reference to clicked node to change the style back to any clicked node.
         var circles = node.append("circle")
-            .attr("r", d => Math.sqrt(d.traffic))
+            .attr("r", d => rscale(d.traffic))
             .attr("fill", function(d) { return color(d.group); })
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
-                .on("end", dragended));
-
-        /*var labels = node.append("text")
-            .text(function(d) {
-                return d.id;
+                .on("end", dragended))
+            .on('mouseover', function(d){
+                tooltip
+                    .attr('transform', 'translate(' + d.x + ',' + d.y + ')')
+                    .style('visibility', 'visible');
+                rect.attr('width', d.label.length * 12);
+                toolTipLabel.text(d.label);
+                toolTipTraffic.text(("Traffic: " + d.traffic));
+                if(toggle === 0 ) {
+                    d3.select(this).style("stroke", "#706E6f").style('stroke-width', 3);
+                }
             })
-            .attr('x', 6)
-            .attr('y', 3);*/
+            .on('mouseout', function(d) {
+                tooltip
+                    .style('visibility', 'hidden');
+                if(toggle === 0){
+                    d3.select(this).style("stroke", "#fff").style('stroke-width', 1);
 
-        node.append("title")
-            .text(function(d) { return d.id; });
+                }
+            })
+            .on('click', function(d){
+                if(previousFocused){
+                    if(previousFocused.id !== this.id){
+                        d3.select(this).style("stroke", "##706e6f").style('stroke-width', 5);
+                    } else{
+                        d3.select(this).style("stroke", "#706E6f").style('stroke-width', 3);
+                    }
+                } else{
+                    d3.select(this).style("stroke", "##706e6f").style('stroke-width', 5);
+                }
+                connectedNodes(d3.select(this), previousFocused);
+            });
+
+        const tooltip = svg.append('g')
+            .style('visibility', 'hidden');
+
+        const rect = tooltip.append('rect')
+            .attr('x', 10)
+            .attr('y', 10)
+            .style('fill', '#ddd')
+            .style('opacity', .9)
+            .attr('height', 45)
+            .attr('width', 100)
+            .style("stroke", "#706E6f")
+            .style('stroke-width', 1)
+            .style('border-radius', '5px');
+
+        const toolTipLabel = tooltip.append('text')
+            .text('hello')
+            .style("font-size", ".8em")
+            .style('font-family', '"Century Gothic", "Roboto", "Helvetica Neue", sans-serif')
+            .attr('y', 25)
+            .attr('x', 15);
+        //.attr('x', d3.select(this.rect).width);
+
+        const toolTipTraffic = tooltip.append('text')
+            .text('hello')
+            .style("font-size", ".8em")
+            .style('font-family', '"Century Gothic", "Roboto", "Helvetica Neue", sans-serif')
+            .attr('y', 45)
+            .attr('x', 15);
+
+        //node.append("title")
+        //    .text(function(d) { return d.label; });
 
         simulation
             .nodes(graph.nodes)
@@ -117,6 +200,70 @@
                     return "translate(" + d.x + "," + d.y + ")";
                 })
         }
+
+
+
+        var counter = 0;
+        var linkedByIndex = {};
+        for (i = 0; i < graph.nodes.length; i++) {
+            linkedByIndex[i + "," + i] = 1;
+            counter++;
+        }
+        console.log("nodes" + counter);
+        counter = 0;
+        graph.links.forEach(function (d) {
+            linkedByIndex[d.source.id + "," + d.target.id] = d.value;
+            linkedByIndex[d.target.id + "," + d.source.id] = d.value;
+            counter++;
+        });
+        console.log("links" + counter);
+
+        console.log(linkedByIndex);
+
+
+        function neighboring(a, b) {
+            return (linkedByIndex[a.id + "," + b.id] || linkedByIndex[b.id + "," + a.id]);
+        }
+
+
+        function connectedNodes(clicked, focused) {
+
+            if (focused) {
+                node.style("opacity", 1);
+                link.style('opacity', 1);
+                //there is a previous focused one
+                if (clicked.index !== focused.index) {
+                    console.log("new one has been clicked");
+                    // focus otherone
+                    d = clicked.node().__data__;
+                    node.style("opacity", function (o) {
+                        return neighboring(d, o) | neighboring(o, d) ? 1 : 0.15;
+                    });
+                    // iterate over all links o and colour those who have source = d or target = d
+                    link.style('opacity', function (o) {
+                        return neighboring(d, o) | neighboring(o, d) ? 1 : 0.15;
+                    });
+                    previousFocused = clicked;
+                }
+                else {
+                    console.log("old one has been clicked");
+                    previousFocused = null;
+                }
+            } else {
+                console.log("none have been previously clicked");
+                //no previous one
+                d = clicked.node().__data__;
+                node.style("opacity", function (o) {
+                    return neighboring(d, o) | neighboring(o, d) ? 1 : 0.15;
+                });
+                // iterate over all links o and colour those who have source = d or target = d
+                link.style('opacity', function (o) {
+                    return neighboring(d, o) | neighboring(o, d) ? 1 : 0.15;
+                });
+                previousFocused = clicked;
+            }
+        }
+
     });
 
     function dragstarted(d) {
@@ -132,8 +279,8 @@
 
     function dragended(d) {
         if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
+        //d.fx = null;
+        //d.fy = null;
     }
 
 </script>

@@ -10,6 +10,8 @@
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
     "react-visibility-sensor": "^5.0.2",
+    "webpack": "^4.26.1",
+    "webpack-dev-server": "^3.1.10",
     "yarn-install": "^1.0.0"
   },
   "scripts": {
