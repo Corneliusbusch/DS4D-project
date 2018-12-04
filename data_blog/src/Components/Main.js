@@ -10,7 +10,7 @@ class Main extends Component {
         <header className="Main-header">
           <h2>Data Visulisation</h2>
           <img className="logo" src={whitelogo} />
-          <p>Nicole, Mojco, Qinru, Zoe</p>
+          <p>Nicole, Mojca, Qinru, Zoe</p>
         </header>
       </div>
     );

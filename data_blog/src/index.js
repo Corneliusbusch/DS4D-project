@@ -9,11 +9,17 @@ import Clickdataicon from './Components/Clickdataicon';
 import Gendericon from './Components/Gendericon';
 import FWgraphtemp from './Components/FWgraphtemp';
 import Locationicon from './Components/Locationicon';
+import CityMap from './Components/CityMap';
 import Conditionicon from './Components/Conditionicon';
 import Conditions from './Components/Conditions';
 import Whaticon from './Components/Whaticon';
+import Football from './Components/Football';
+import Radio from './Components/Radio';
 import Wordmap from './Components/Wordmap';
+import Network from './Components/Network';
 import Whenicon from './Components/Whenicon';
+import Daydistribution from './Components/Daydistribution';
+import Heatmap from './Components/Heatmap';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -26,11 +32,17 @@ ReactDOM.render(
         <Gendericon />
         <FWgraphtemp />
         <Locationicon />
+        <CityMap />
         <Conditionicon />
         <Conditions />
         <Whaticon />
         <Wordmap />
+        <Football />
+        <Radio />
+        <Network />
         <Whenicon />
+        <Daydistribution />
+        <Heatmap />
 
     </div>, 
     document.getElementById('root'));
