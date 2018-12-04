@@ -192,4 +192,8 @@ img.logo {
   .left {
     padding: 20px 20px;
   }
+
+  .iframe {
+    display: none;
+  }
 }
