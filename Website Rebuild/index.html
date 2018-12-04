@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>CleverClogs Data Visulisation</title>
+    <title>CleverCogs Data Visulisation</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -85,6 +85,35 @@
         img.src="img/location6.png";
         return false;
         }
+        
+        
+        function changeImageGen()
+        {
+        var img = document.getElementById("gender1");
+        img.src="img/GenderUsageGrey.png";
+        return false;
+        }
+        
+        function changeImageGen1()
+        {
+        var img = document.getElementById("gender1");
+        img.src="img/GenderUsagePink.png";
+        return false;
+        }
+        
+        function changeImageGen2()
+        {
+        var img = document.getElementById("gender1");
+        img.src="img/GenderUsageGreen.png";
+        return false;
+        }
+        
+        function changeImageGen3()
+        {
+        var img = document.getElementById("gender1");
+        img.src="img/GenderUsageAll.png";
+        return false;
+        }
 
     </script>
 
@@ -127,9 +156,9 @@
             <img src="img/tablet.png">
           </div>
           <div class="col-sm-12 col-md-6 left color-light-grey-background color-grey">
-            <h2>What is CleverClogs?</h2>
+            <h2>What is CleverCogs?</h2>
             <h1>Tablet</h1>
-            <p>CleverClogs is a tablet application for people who need care.</p>
+            <p>CleverCogs is a tablet application for people who need care.</p>
           </div>
         </div>
       </div>
@@ -186,6 +215,23 @@
           <div class="col-md-12 color-grey">
             <h2>Age Density by Gender</h2>
             <img src="img/age-den-gen.png">
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      <div class="container-fluid graph bb">
+      <div class="container block">
+        <div class="row">
+          <div class="col-md-12 color-grey">
+            <h2>Usage by Gender</h2>
+            <img id="gender1" src=img/GenderUsageGray.png alt="">
+            <div clas="buttons">
+                <button class="clickme" onclick="changeImageGen();">GENERAL</button>
+                <button class="clickme" onclick="changeImageGen1();">FEMALE</button>
+                <button class="clickme" onclick="changeImageGen2();">MALE</button>
+                <button class="clickme" onclick="changeImageGen3();">ALL</button>
+            </div>
           </div>
         </div>
       </div>
@@ -250,7 +296,7 @@
           <div class="col-sm-12 col-md-6 left color-pink-background color-white">
             <h2>Medical conditions?</h2>
             <h1>60%</h1>
-            <p>Over half of the users of CleverClogs have a medical condition.</p>
+            <p>Over half of the users of CleverCogs have a medical condition.</p>
           </div>
           <div class="col-sm-12 col-md-6 icon">
             <img src="img/conditionicon.png">
@@ -283,6 +329,15 @@
       </div>
     </div>
 
+    <div class="container-fluid graph block bb iframe">
+      <div class="row">
+        <div class="col-md-12 color-grey">
+          <h2>Link Title</h2>
+          <iframe src="iframe/LinkType.html" frameborder="0" width="800" height="350"></iframe>
+        </div>
+      </div>
+    </div>
+      
     <div class="container-fluid graph block bb iframe">
       <div class="row">
         <div class="col-md-12 color-grey">
