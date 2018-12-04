@@ -1,4 +1,4 @@
-import Count from 'countup.js';
+import Count from 'count.js ';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import warning from 'warning';
