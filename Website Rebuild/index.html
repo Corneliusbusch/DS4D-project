@@ -13,6 +13,80 @@
 
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script> 
+
+        function changeImage()
+        {
+        var img = document.getElementById("chart1");
+        img.src="img/chart1.png";
+        return false;
+        }
+        
+        function changeImage1()
+        {
+        var img = document.getElementById("chart1");
+        img.src="img/chart2.png";
+        return false;
+        }
+        
+        function changeImage2()
+        {
+        var img = document.getElementById("chart1");
+        img.src="img/chart3.png";
+        return false;
+        }
+        
+        function changeImage3()
+        {
+        var img = document.getElementById("chart1");
+        img.src="img/chart4.png";
+        return false;
+        }
+        
+        
+        function changeImageLoc()
+        {
+        var img = document.getElementById("location1");
+        img.src="img/location1.png";
+        return false;
+        }
+        
+        function changeImageLoc1()
+        {
+        var img = document.getElementById("location1");
+        img.src="img/location2.png";
+        return false;
+        }
+        
+        function changeImageLoc2()
+        {
+        var img = document.getElementById("location1");
+        img.src="img/location3.png";
+        return false;
+        }
+        
+        function changeImageLoc3()
+        {
+        var img = document.getElementById("location1");
+        img.src="img/location4.png";
+        return false;
+        }
+        
+        function changeImageLoc4()
+        {
+        var img = document.getElementById("location1");
+        img.src="img/location5.png";
+        return false;
+        }
+        
+        function changeImageLoc5()
+        {
+        var img = document.getElementById("location1");
+        img.src="img/location6.png";
+        return false;
+        }
+
+    </script>
 
   </head>
 
@@ -131,6 +205,35 @@
         </div>
       </div>
     </div>
+      
+    <div class="container-fluid graph bb">
+      <div class="container block">
+        <div class="row">
+          <div class="col-md-12 color-grey">
+            <h2>Location Graphs</h2>
+            <img id="chart1" src=img/chart1.png alt="">
+            <div clas="buttons">
+                <button class="clickme" onclick="changeImage();">NO. OF USERS</button>
+                <button class="clickme" onclick="changeImage1();">NO.OF CLICKS</button>
+                <button class="clickme" onclick="changeImage2();">AVERAGE USAGE</button>
+                <button class="clickme" onclick="changeImage3();">AVERAGE USAGE BY MONTHS</button>
+            </div>
+              
+            <img id="location1" src=img/location1.png alt="">
+            <div clas="buttons">
+                <button class="clickme" onclick="changeImageLoc();">EDINBURGH</button>
+                <button class="clickme" onclick="changeImageLoc1();">STIRLING</button>
+                <button class="clickme" onclick="changeImageLoc2();">AYR</button>
+                <button class="clickme" onclick="changeImageLoc3();">DUNDEE</button>
+                <button class="clickme" onclick="changeImageLoc4();">ABERDEEN</button>
+                <button class="clickme" onclick="changeImageLoc5();">GLASGOW</button>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+      
 
     <div class="container-fluid graph block bb iframe">
       <div class="row">
