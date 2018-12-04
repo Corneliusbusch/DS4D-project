@@ -160,6 +160,19 @@ img.logo {
   width: 70%;
 }
 
+/* BUTTONS*/
+
+.buttons {
+    text-align: center;
+}
+
+.clickme {
+    color: #474546;
+    font-family: "Century Gothic", "Roboto", "Helvetica Neue", sans-serif;
+    font-size: 0.4em;
+    font-weight: 100;
+}
+
 
 
 
